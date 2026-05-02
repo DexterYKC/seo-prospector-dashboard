@@ -1,0 +1,258 @@
+/* ─── Moderator shell ─────────────────────────────────────────────────────── */
+.modShell {
+  min-height: 100vh;
+  background: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.modHeader {
+  background: #0a1640;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.modHeader__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.modHeader__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #62a0ff;
+  display: inline-block;
+}
+
+.modHeader__name { color: #93c5fd; font-weight: 400; }
+
+.modHeader__logout {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modHeader__logout:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+.modMain {
+  flex: 1;
+  padding: 40px 32px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.modSection__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modSection__head h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.modError {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.modMuted { color: #64748b; font-size: 0.9rem; }
+
+/* ─── Table ───────────────────────────────────────────────────────────────── */
+.modTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.modTable th {
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.modTable tr:last-child td { border-bottom: 0; }
+
+.modTable__title { font-weight: 600; color: #0f172a; max-width: 260px; }
+.modTable__slug  { font-size: 0.8rem; color: #64748b; font-family: monospace; }
+.modTable__date  { font-size: 0.8rem; color: #64748b; white-space: nowrap; }
+.modTable__actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+/* ─── Badges ──────────────────────────────────────────────────────────────── */
+.modBadge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.modBadge--published { background: #dcfce7; color: #15803d; }
+.modBadge--draft     { background: #fef9c3; color: #854d0e; }
+
+/* ─── Buttons ─────────────────────────────────────────────────────────────── */
+.modBtn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  transition: background 0.15s;
+}
+.modBtn:hover { background: #f1f5f9; }
+.modBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.modBtn--primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+.modBtn--primary:hover { background: #1d4ed8; }
+
+.modBtn--edit   { border-color: #bfdbfe; color: #1d4ed8; background: #eff6ff; }
+.modBtn--edit:hover { background: #dbeafe; }
+
+.modBtn--delete { border-color: #fecaca; color: #b91c1c; background: #fff5f5; }
+.modBtn--delete:hover { background: #fee2e2; }
+
+/* ─── Modal ───────────────────────────────────────────────────────────────── */
+.modModal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+
+.modModal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+}
+
+.modModal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.modModal__head h3 { margin: 0; font-size: 1.1rem; font-weight: 700; color: #0f172a; }
+.modModal__close {
+  background: transparent;
+  border: 0;
+  font-size: 1.1rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.modModal__close:hover { background: #f1f5f9; }
+
+.modModal__body {
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modModal__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ─── Form fields ─────────────────────────────────────────────────────────── */
+.modField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.modField label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.modField input,
+.modField textarea {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+.modField input:focus,
+.modField textarea:focus { border-color: #2563eb; background: #fff; }
+
+.modFieldRow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.modCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #334155;
+  cursor: pointer;
+}
+.modCheckbox input { width: 16px; height: 16px; cursor: pointer; }
