@@ -4,6 +4,27 @@ The **web front-end of the LinkedIn SEO Prospector SaaS**: the customer dashboar
 
 > **Status: functional, unpolished.** Everything below works against the API, but the UI never got a proper design pass and the product is no longer live: the extension was published on the Chrome Web Store, then taken down by Google, and its backend ran on a free hosting tier that I never upgraded. Shared as a portfolio piece. Production domains and emails were replaced with `example.com` placeholders.
 
+## Screenshots
+
+The public marketing site, captured from the running app (test data only). The customer dashboard, moderator console and team screens need a live `api-saas` instance behind them, so they are not shown here; the extension side panel they mirror is shown in the [`linkedin-seo-prospector`](https://github.com/DexterYKC/linkedin-seo-prospector#screenshots) README.
+
+**Home page**
+
+![Home page](docs/screenshots/marketing-home.jpg)
+
+**Feature page: SEO opportunity scoring**, with an interactive mock of the audit list.
+
+![SEO scoring feature page](docs/screenshots/marketing-seo-scoring.jpg)
+
+**Product tour:** capture, SEO audit, lead classification and message generation, each with an in-page mock of the extension.
+
+![Product tour](docs/screenshots/marketing-product-tour.jpg)
+
+**Use case: SEO agencies**, and **pricing** with four plans.
+
+![Use case for agencies](docs/screenshots/marketing-use-case-agency.jpg)
+![Pricing](docs/screenshots/marketing-pricing.jpg)
+
 ## What's in it
 
 **Customer dashboard (`src/app/(app)`)**
